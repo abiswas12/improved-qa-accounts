@@ -1,0 +1,32 @@
+<div class='panel panel-primary'>
+  <h1>
+    Welcome to {{ pageTitle }}!
+  </h1>
+	<div class='panel-heading'>Accounts list</div>
+	<div class='table-responsive'>
+		<table class='table'>
+			<thead>
+				<tr>
+					<th>Account No.</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Delete Account</th>
+					<th>Edit Account</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let account of accounts">
+					<td>{{account.accountNo}}</td>
+					<td>{{account.firstName}}</td>
+					<td>{{account.lastName}}</td>
+					<td>
+              			<button type="button" class="btn btn-success" (click)="editAccount(account)">Edit</button>
+              			<button type="button" class="btn btn-danger" (click)="deleteAccount(account)">Delete</button>
+            		</td>
+			</tbody>
+		</table>
+	</div>
+	<div style="text-align:center">
+	<p><button type="button" class="btn btn-primary" (click)="addAccount()">New User</button></p>
+</div>
+</div>
