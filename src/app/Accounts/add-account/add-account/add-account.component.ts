@@ -13,7 +13,6 @@ export class AddAccountComponent implements OnInit, OnDestroy {
 
   id: number;
   account: IAccount;
-  
   accountForm: FormGroup;
   private sub: any;
   constructor(private route: ActivatedRoute,
@@ -25,21 +24,18 @@ export class AddAccountComponent implements OnInit, OnDestroy {
       this.id = params['id'];
     });
     this.accountForm = new FormGroup({
+      accountNo: new FormControl('', Validators.required),
       firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      email: new FormControl('', [
-        Validators.required,
-        Validators.pattern('[^ @]*@[^ @]*')
-      ])
+      lastName: new FormControl('', Validators.required)
     });
     if (this.id) { // Edit Page
       this._accountService.getAccountById(this.id).subscribe(
         account => {
             this.id = account.id;
             this.accountForm.patchValue({
-            firstName: account.accountNo,
-            lastName: account.firstName,
-            email: account.lastName,
+            accountNo: account.accountNo,
+            firstName: account.firstName,
+            lastName: account.lastName,
           });
          },
         error => {
@@ -53,13 +49,13 @@ export class AddAccountComponent implements OnInit, OnDestroy {
     if (this.accountForm.valid) {
       if (this.id) {
         let account: IAccount = new IAccount(this.id,
-          this.accountForm.controls['acountNo'].value,
+          this.accountForm.controls['accountNo'].value,
           this.accountForm.controls['firstName'].value,
           this.accountForm.controls['lastName'].value);
           this._accountService.updateAccount(account).subscribe();
       } else {
         let account: IAccount = new IAccount(null,
-          this.accountForm.controls['acountNo'].value,
+          this.accountForm.controls['accountNo'].value,
           this.accountForm.controls['firstName'].value,
           this.accountForm.controls['lastName'].value);
           this._accountService.saveAccount(account).subscribe();

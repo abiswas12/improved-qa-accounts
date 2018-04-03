@@ -4,8 +4,9 @@
 		<div class='container-fluid'>
 			<a class='navbar-brand'>{{ appTitle }}</a>
 				<ul class='nav navbar-nav'>
-			<li><a [routerLink]="['/accounts']">Accounts List</a></li>
-			<li><a [routerLink]="['/accounts/new']">Add Accounts</a></li>
+				<li><a [routerLink]="['/welcome']">Home</a></li>
+				<li><a [routerLink]="['/accounts']">Accounts List</a></li>
+				<li><a [routerLink]="['/accounts/new']">Add Accounts</a></li>
 			<router-outlet></router-outlet>
 				</ul>
 		</div>

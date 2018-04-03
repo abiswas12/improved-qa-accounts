@@ -23,16 +23,16 @@ export class AccountService {
       .catch((error: any) => Observable.throw(error.json().error || 'Error'));
   }
   saveAccount(account: IAccount): Observable<IAccount> {
-    return this.http.post(this.ACCOUNT_API + 'accounts', account)
+    return this.http.post(this.ACCOUNT_API, account)
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
   deleteAccountById(id: number): Observable<boolean> {
-    return this.http.delete(this.API + '/' + id)
+    return this.http.delete(this.ACCOUNT_API + '/' + id)
       .map((res: Response) => res.json())
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
   updateAccount(account: IAccount): Observable<IAccount> {
-    return this.http.put(this.API, account)
+    return this.http.put(this.ACCOUNT_API, account)
       .map((res: Response) => res.json())
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
