@@ -7,6 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 To RUN this WebApplication use:
   
   `ng serve --port=4200 --live-reload=true --webclipse-launch-id=2646645815287985857`
+  
+Once started access via the [4200 port](https://localhost:4200)
 
 Please run it alongside the [qa-backend-accounts](https://github.com/abiswas12/qa-backend-accounts) src/main/java/App.java available in: 
 
