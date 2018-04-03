@@ -42,7 +42,7 @@ export class AccountsListComponent implements OnInit {
       this._accountService.deleteAccountById(account.id).subscribe(
         res => {
           this.getAccounts();
-          this._router.navigate(['/user']);
+          this._router.navigate(['/accounts']);
           console.log('done');
         }
       );
