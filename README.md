@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running Exercise Accounts Application
 
-To RUN this WebApplication use ng serve --port=4200 --live-reload=true --webclipse-launch-id=2646645815287985857
+To RUN this WebApplication use: 
+  
+  ng serve --port=4200 --live-reload=true --webclipse-launch-id=2646645815287985857
 
 Please run it alongside the qa-backend-accounts src/main/java/App
 
