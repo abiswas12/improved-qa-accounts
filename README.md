@@ -10,7 +10,7 @@ Please run it alongside the qa-backend-accounts src/main/java/App
 
 ## Error
 
-Is inputting data into the H2 server however, is not showing the accounts in the lists view.
+Is inputting data into the H2 server however, is not showing the accounts in the lists view. Error in (account.service.ts:18)
 
 ## Development server
 
